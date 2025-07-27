@@ -21,7 +21,9 @@ export function calculateSpeed(point1, point2) {
   const speedKmh = (distanceKm / timeDiffSeconds) * 3600; // Convert to km/h
 
   // Cap speed at reasonable maximum (e.g., 150 km/h)
-  const MAX_SPEED = 150;
+  // TT:Sun 27 Jul 2025 10:59:39 AM PDT
+  //    lol - Raven can do over 200mph
+  const MAX_SPEED = 350;
   return Math.min(speedKmh, MAX_SPEED);
 }
 
@@ -226,6 +228,7 @@ export function addHighlightOnHover(polylineGroup, map, polylineCoordinates, use
             <strong>Duration:</strong> ${timeOnRoute}<br>
             <strong>Total Distance:</strong> ${formatDistance(totalDistance, distanceUnit)}<br>
             <strong>Current Speed:</strong> ${formatSpeed(speed, distanceUnit)}
+            <br><strong>rawSpeed:</strong> ${speed}
         `;
 
         if (hoverPopup) {
