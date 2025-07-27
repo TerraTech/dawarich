@@ -81,9 +81,12 @@ class Gpx::TrackImporter
   def speed(point)
     return if point['extensions'].blank?
 
-    value = point.dig('extensions', 'speed')
-    extensions = point.dig('extensions', 'TrackPointExtension')
-    value ||= extensions.is_a?(Hash) ? extensions.dig('speed') : nil
+#    value = point.dig('extensions', 'speed')
+#    extensions = point.dig('extensions', 'TrackPointExtension')
+#    value ||= extensions.is_a?(Hash) ? extensions.dig('speed') : nil
+    //TT:Sun 27 Jul 2025 11:06:50 AM PDT
+    //  Handle importing from android GPX Tracker
+    value = point.dig('extensions', 'meta', 's')
 
     value&.to_f&.round(1) || 0.0
   end
