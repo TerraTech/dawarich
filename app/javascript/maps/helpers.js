@@ -94,7 +94,11 @@ export function formatSpeed(speedKmh, unit = 'km') {
   if (unit === 'km') {
     return `${Math.round(speedKmh)} km/h`;
   } else {
-    const speedMph = speedKmh * 0.621371; // Convert km/h to mph
+    // const speedMph = speedKmh * 0.621371; // Convert km/h to mph
+    //TT:Sun 27 Jul 2025 10:55:10 AM PDT
+    // on the map speedKmh is really speedMps
+    const speedMph = speedKmh * 2.3694  // Convert m/s to mph
+
     return `${Math.round(speedMph)} mph`;
   }
 }
