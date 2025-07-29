@@ -8,7 +8,7 @@ ENV RAILS_PORT=3000
 ENV RAILS_ENV=development
 ENV SELF_HOSTED=true
 ENV SIDEKIQ_USERNAME=sidekiq
-ENV SIDEKIQ_PASSWORD=password
+#ENV SIDEKIQ_PASSWORD=password
 # Resolving sqlite3 error
 ENV PGSSENCMODE=disable
 
