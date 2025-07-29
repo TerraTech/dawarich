@@ -27,13 +27,36 @@ export function calculateSpeed(point1, point2) {
   return Math.min(speedKmh, MAX_SPEED);
 }
 
+// 0kmh = 0
+// 15kmh = 9.32
+// 30kmh = 18mph
+// 50kmh = 31mph
+// 100kmh = 62mph
 // Optimize getSpeedColor by pre-calculating color stops
+/*
 export const colorStopsFallback = [
   { speed: 0, color: '#00ff00' },    // Stationary/very slow (green)
   { speed: 15, color: '#00ffff' },   // Walking/jogging (cyan)
   { speed: 30, color: '#ff00ff' },   // Cycling/slow driving (magenta)
   { speed: 50, color: '#ffff00' },   // Urban driving (yellow)
   { speed: 100, color: '#ff3300' }   // Highway driving (red)
+];
+*/
+
+// mph -> kmh
+// 0 = 0
+// 35 = 57
+// 60 = 97
+// 80 = 129
+// 100 = 161
+// 150 = 241
+export const colorStopsFallback = [
+  { speed: 0, color: '#00008b' },    // Stationary/very slow (green)
+  { speed: 57, color: '#00ffff' },   // Walking/jogging (cyan)
+  { speed: 97, color: '#00ff00' },   // Cycling/slow driving (magenta)
+  { speed: 129, color: '#ffff00' },   // Urban driving (yellow)
+  { speed: 161, color: '#ffA500' },   // Highway driving (red)
+  { speed: 209, color: '#ff0000' }   // Highway driving (red)
 ];
 
 export function colorFormatEncode(arr) {
