@@ -14,7 +14,7 @@ class ImportsController < ApplicationController
   def index
     @imports = policy_scope(Import)
       .select(:id, :name, :source, :created_at, :processed, :status)
-      .order(created_at: :desc)
+      .order(name: :desc)
       .page(params[:page])
   end
 
