@@ -561,7 +561,8 @@ RSpec.describe 'Map Interaction', type: :system do
         within('.leaflet-settings-panel') do
           # Update speed color scale
           scale_input = find('#speed_color_scale')
-          new_scale = '0:#ff0000|25:#ffff00|50:#00ff00|100:#0000ff'
+          #new_scale = '0:#ff0000|25:#ffff00|50:#00ff00|100:#0000ff'
+          new_scale = '0:#00008b|57:#00ffff|97:#00ff00|129:#ffff00|161:#ffA500|209:#ff0000'
           scale_input.fill_in(with: new_scale)
 
           click_button 'Update'
